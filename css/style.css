@@ -175,8 +175,9 @@ dfn { font-style: normal; font-weight: 600; }
 .stream { background: var(--cream); border-radius: 14px; padding: 16px 18px; display: flex; flex-direction: column; gap: 6px; }
 .stream-date { font-weight: 700; font-size: 18px; }
 .seats { font-size: 15px; color: var(--ok); font-weight: 600; }
-.stream.is-full { opacity: .75; }
-.stream.is-full .seats { color: var(--muted); }
+.stream.is-full { background: #EFE8DF; border: 2px dashed #CDBBA6; }
+.stream.is-full .stream-date { color: var(--muted); text-decoration: line-through; }
+.stream.is-full .seats { color: var(--error); }
 .stream .btn { margin-top: 8px; align-self: flex-start; }
 
 .pdf-block { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: clamp(20px, 4vw, 36px); flex-wrap: wrap; }
