@@ -5,8 +5,8 @@
 | Сайт на Vercel | https://tz-02-kofeynya-zerno7.vercel.app ← проверьте и замените на свой адрес |
 | Таблица заявок «Zerno7 — Leads» | https://docs.google.com/spreadsheets/d/1PVM_GEj12DnQ_oKWPihchwo72jw7Ts2gGPIHwIuBiLo/edit |
 | Дашборд DataLens «ЗЕРНО 7 — barista_dec_2026» | ___ |
-| Instagram (профиль) | ___ |
-| Reel с автоответами (ЛАТТЕ / ЗЕРНО) | ___ |
+| Instagram (профиль) | https://www.instagram.com/bilol.abd20092024/ |
+| Reel с автоответами (ЛАТТЕ / ЗЕРНО) | https://www.instagram.com/reel/DfA71NUtl6I/ |
 | ВКонтакте (пост U-05, товар U-06) | ___ |
 | Telegram (пост U-07, чат U-08) | ___ |
 | YouTube (видео U-09) | ___ |
