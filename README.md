@@ -3,7 +3,7 @@
 | Что | Ссылка |
 |---|---|
 | Сайт на Vercel | https://tz-02-kofeynya-zerno7.vercel.app ← проверьте и замените на свой адрес |
-| Таблица заявок «Zerno7 — Leads» | ___ |
+| Таблица заявок «Zerno7 — Leads» | https://docs.google.com/spreadsheets/d/1PVM_GEj12DnQ_oKWPihchwo72jw7Ts2gGPIHwIuBiLo/edit |
 | Дашборд DataLens «ЗЕРНО 7 — barista_dec_2026» | ___ |
 | Instagram (профиль) | ___ |
 | Reel с автоответами (ЛАТТЕ / ЗЕРНО) | ___ |
