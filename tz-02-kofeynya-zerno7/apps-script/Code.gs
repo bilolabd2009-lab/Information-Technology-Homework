@@ -5,13 +5,14 @@
  *
  * Установка (подробно — docs/setup.md, шаг 3):
  * 1. Таблица «Zerno7 — Leads» → Расширения → Apps Script → вставить этот код.
- * 2. Вписать SPREADSHEET_ID (часть адреса таблицы между /d/ и /edit).
+ * 2. SPREADSHEET_ID можно не вписывать: без него берётся таблица, к которой привязан скрипт.
  * 3. Запустить setupSheet() один раз — создаст заголовки, списки и подсветку.
  * 4. Развернуть → Новое развёртывание → Веб-приложение:
  *    «Выполнять как: я», «Доступ: все». Полученный URL вставить в js/form.js.
  */
 
-const SPREADSHEET_ID = 'ВСТАВЬТЕ_ID_ТАБЛИЦЫ';
+// Пусто — берётся таблица, из которой открыт редактор (Расширения → Apps Script)
+const SPREADSHEET_ID = '';
 const SHEET_NAME = 'leads';
 
 const HEADERS = ['request_id', 'created_at', 'name', 'phone', 'email', 'course', 'start_month',
@@ -120,7 +121,7 @@ function validate_(d) {
 }
 
 function getSheet_() {
-  const sheet = SpreadsheetApp.openById(SPREADSHEET_ID).getSheetByName(SHEET_NAME);
+  const sheet = openSpreadsheet_().getSheetByName(SHEET_NAME);
   if (!sheet) throw new Error('Нет листа ' + SHEET_NAME + ': запустите setupSheet()');
   return sheet;
 }
@@ -131,6 +132,10 @@ function isDuplicate_(sheet, requestId) {
   return found !== null;
 }
 
+function openSpreadsheet_() {
+  return SPREADSHEET_ID ? SpreadsheetApp.openById(SPREADSHEET_ID) : SpreadsheetApp.getActiveSpreadsheet();
+}
+
 function json_(obj) {
   return ContentService.createTextOutput(JSON.stringify(obj)).setMimeType(ContentService.MimeType.JSON);
 }
@@ -138,7 +143,7 @@ function json_(obj) {
 /* ---------------- Настройка таблицы (запустить один раз вручную) ---------------- */
 
 function setupSheet() {
-  const ss = SpreadsheetApp.openById(SPREADSHEET_ID);
+  const ss = openSpreadsheet_();
   ss.setSpreadsheetTimeZone('Europe/Moscow');
   const sheet = ss.getSheetByName(SHEET_NAME) || ss.insertSheet(SHEET_NAME);
   const rows = 1000;
