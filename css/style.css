@@ -18,6 +18,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; } /* атрибут hidden сильнее любых display у классов */
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
 
@@ -297,3 +298,7 @@ dfn { font-style: normal; font-weight: 600; }
   .cta-inner .btn, .pdf-block .btn { width: 100%; }
   .menu-item { flex-direction: column; gap: 4px; }
 }
+
+/* Телефон и e-mail внутри текста — область нажатия не меньше 44 px */
+main p a[href^="tel:"], main p a[href^="mailto:"] { display: inline-flex; align-items: center; min-height: 44px; }
+.quiz-option input, .field-check input { cursor: pointer; }
