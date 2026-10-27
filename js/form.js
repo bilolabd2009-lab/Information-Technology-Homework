@@ -3,7 +3,7 @@
   'use strict';
 
   // Адрес веб-приложения Apps Script (Развернуть → Веб-приложение → URL)
-  var ENDPOINT = 'https://script.google.com/macros/s/ВСТАВЬТЕ_ID_РАЗВЁРТЫВАНИЯ/exec';
+  var ENDPOINT = 'https://script.google.com/macros/s/AKfycbxQMRzT5H-1-4m4PnFLeVuY5-3XZ0_mEgmvWCkQi-dW4ncn6W4Isfyp7h1iD521v02G/exec';
 
   var form = document.getElementById('lead-form');
   if (!form) return;
