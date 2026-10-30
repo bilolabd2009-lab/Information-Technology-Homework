@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Учебный стенд: запись на пробное занятие</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 0; color: #222; background: #fafafa; }
+  header, section, footer { max-width: 760px; margin: 0 auto; padding: 24px 16px; }
+  header { padding-top: 48px; }
+  .hero { min-height: 60vh; }
+  button { padding: 10px 18px; font-size: 16px; cursor: pointer; }
+  form { display: grid; gap: 12px; max-width: 360px; }
+  input, select { padding: 8px; font-size: 15px; }
+  #log { position: fixed; right: 12px; bottom: 12px; width: 300px; max-height: 40vh; overflow: auto;
+         background: #111; color: #9f9; font: 12px monospace; padding: 8px; border-radius: 6px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Курсы программирования «Старт»</h1>
+  <p>Учебная страница для домашней работы по веб-аналитике. Никакие данные никуда не отправляются: события только пишутся в консоль и в окно справа.</p>
+</header>
+
+<section class="hero">
+  <h2>Почему стоит попробовать</h2>
+  <p>Пробное занятие бесплатно, длится 45 минут и проходит онлайн.</p>
+  <p>Прокрутите страницу вниз, чтобы записаться.</p>
+</section>
+
+<section id="signup">
+  <h2>Запись на пробное занятие</h2>
+  <button id="cta" type="button">Записаться</button>
+  <form id="form" hidden>
+    <input name="name" placeholder="Имя" required>
+    <input name="phone" placeholder="Телефон" required>
+    <select name="course">
+      <option>Python</option>
+      <option>JavaScript</option>
+      <option>C#</option>
+    </select>
+    <button type="submit">Отправить заявку</button>
+  </form>
+  <p id="done" hidden>Спасибо! Заявка принята (на самом деле никуда не отправлена).</p>
+</section>
+
+<footer><small>Учебный стенд, 2026</small></footer>
+
+<pre id="log"></pre>
+
+<script>
+  // Имитация счётчика аналитики: те же параметры, что у GA4 (en, dl, dt, ul, sr),
+  // но запросы не отправляются — события копятся в window.events.
+  window.events = [];
+  function track(en, extra) {
+    const e = Object.assign({
+      en,
+      dl: location.href,
+      dt: document.title,
+      ul: navigator.language,
+      sr: screen.width + 'x' + screen.height,
+      t: new Date().toLocaleTimeString()
+    }, extra || {});
+    window.events.push(e);
+    console.log('[collect]', e);
+    document.getElementById('log').textContent += e.t + '  ' + en + (extra ? ' ' + JSON.stringify(extra) : '') + '\n';
+  }
+
+  track('page_view');
+
+  let scrolled = false;
+  addEventListener('scroll', () => {
+    const pct = (scrollY + innerHeight) / document.body.scrollHeight;
+    if (!scrolled && pct > 0.9) { scrolled = true; track('scroll', { percent_scrolled: 90 }); }
+  });
+
+  document.getElementById('cta').addEventListener('click', () => {
+    track('click_cta');
+    document.getElementById('form').hidden = false;
+  });
+
+  let started = false;
+  document.getElementById('form').addEventListener('input', (ev) => {
+    // Фиксируем только факт начала заполнения и имя поля, но не сам текст.
+    if (!started) { started = true; track('form_start', { field: ev.target.name }); }
+  });
+
+  document.getElementById('form').addEventListener('submit', (ev) => {
+    ev.preventDefault();
+    track('generate_lead', { course: ev.target.course.value });
+    ev.target.hidden = true;
+    document.getElementById('done').hidden = false;
+  });
+</script>
+</body>
+</html>
