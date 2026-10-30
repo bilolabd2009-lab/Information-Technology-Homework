@@ -5,6 +5,7 @@
 | Сайт (GitHub Pages) | https://bilolabd2009-lab.github.io/Information-Technology-Homework/tz-02-kofeynya-zerno7/ |
 | Таблица заявок «Zerno7 — Leads» (листы `leads`, `utm`, `ga4_traffic`, `ga4_leads`) | https://docs.google.com/spreadsheets/d/1PVM_GEj12DnQ_oKWPihchwo72jw7Ts2gGPIHwIuBiLo/edit |
 | Дашборд DataLens «ЗЕРНО 7 — barista_dec_2026» | https://datalens.ru/nxavdwghggvk6-zerno-7-barista-dec-2026 |
+| Презентация для защиты (13 слайдов, PDF) | `docs/presentation.pdf` |
 | Instagram (профиль) | https://www.instagram.com/bilol.abd20092024/ |
 | Reel с автоответами (ЛАТТЕ / ЗЕРНО) | https://www.instagram.com/reel/DfA71NUtl6I/ |
 | ВКонтакте (пост U-05, товар U-06) | только ссылки: https://clck.ru/3Wk7yi, https://clck.ru/3Wk7yj — сообщество не создавалось (см. ниже) |
