@@ -15,6 +15,16 @@
 | [homework/lessons_1.pdf](homework/lessons_1.pdf) | Путь данных от ссылки до заявки (Google Merch Shop) и разбор случая Session replay |
 | [homework/lessons_3.pdf](homework/lessons_3.pdf) | Сравнение учебного стенда, Google Merch Shop и IKEA: аналитика, воронка, приватность |
 | [stand/index.html](stand/index.html) | Учебный стенд: страница с формой заявки и имитацией счётчика аналитики |
+| [lesson_01](lesson_01/README.md) | Цифровая воронка: путь от ссылки до заявки |
+| [lesson_02](lesson_02/README.md) | Воронка бизнеса «Зерно 7» и структура GA4 |
+| [lesson_03](lesson_03/README.md) | Google Tag, подключение GA4 и источники переходов (UTM) |
+| [lesson_04](lesson_04/README.md) | События и параметры Google Analytics 4 |
+| [lesson_05](lesson_05/README.md) | Приём заявок с сайта в Google Таблицы |
+| [lesson_06](lesson_06/README.md) | Очистка и подготовка данных в таблицах |
+| [lesson_07](lesson_07/README.md) | Instagram, ManyChat и путь заявки |
+
+Занятия 2 и 4–7 сделаны на материалах моего проекта
+[«Зерно 7»](../tz-02-kofeynya-zerno7/README.md).
 
 Стенд открывается двойным кликом по `stand/index.html`. События (`page_view`, `scroll`,
 `click_cta`, `form_start`, `generate_lead`) выводятся в консоль браузера и в окно на
